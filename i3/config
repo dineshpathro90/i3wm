@@ -82,7 +82,11 @@ bindsym $super+m bar mode toggle
 bindsym $super+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=20'"
 
 # start rofi (a program launcher) change modus Ctrl + Tab
-bindsym $super+d exec rofi -show run
+set $mod Mod4
+#bindsym $super+d exec rofi -show run
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-3/launcher.sh
+bindsym $mod+x exec --no-startup-id powermenu_t2
+
 
 # Garuda Linux install
 bindsym $super+i exec sudo -E calamares
@@ -350,3 +354,4 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+#--------------------------------------------------------------------------------------------------
