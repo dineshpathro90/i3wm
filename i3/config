@@ -199,6 +199,9 @@ bindsym $alt+Shift+6 move container to workspace 6; workspace 6
 bindsym $alt+Shift+7 move container to workspace 7; workspace 7
 bindsym $alt+Shift+8 move container to workspace 8; workspace 8
 
+#For Sound Edit In Gui
+bindsym $super+shift+a exec pavucontrol
+
 # reload the configuration file
 bindsym $super+Shift+c reload
 
@@ -331,7 +334,6 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 # Set shut down, restart and locking features
 bindsym $super+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
@@ -348,24 +350,3 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
-# i3status configuration integration
-# Customize the i3status bar to display various system information
-
-
-
-bar {
-    status_command i3status
-    position top
-    font pango:Source Code Pro 10
-    colors {
-        background #2f343f
-        statusline #ffffff
-        separator  #666666
-        focused_workspace  #bf616a #bf616a #ffffff
-        active_workspace   #4c566a #4c566a #ffffff
-        inactive_workspace #2f343f #2f343f #888888
-        urgent_workspace   #bf616a #bf616a #ffffff
-    }
-}
-
