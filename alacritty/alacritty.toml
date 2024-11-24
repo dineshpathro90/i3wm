@@ -1,0 +1,118 @@
+
+## ENVIRONMENT ----------------------------------------------------
+
+## All key-value pairs in the [env] section will be added as environment variables for any process spawned
+## by Alacritty, including its shell. Some entries may override variables set by alacritty itself.
+[env]
+TERM = "alacritty"
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+
+## WINDOW ---------------------------------------------------------
+[window]
+position = "None"                 # Position of the window (None for automatic).
+dynamic_padding = true            # Enable dynamic padding to adjust window size automatically.
+decorations = "none"              # Disable window decorations.
+opacity = 0.85                    # Set transparency (1.0 is fully opaque, lower values increase transparency).
+blur = false                      # Disable background blur.
+startup_mode = "Windowed"         # Start in windowed mode (not fullscreen).
+dynamic_title = true              # Allow the title to change dynamically based on the shell.
+class = { instance = "Alacritty", general = "Alacritty" }  # Window class for WM handling.
+decorations_theme_variant = "None"
+#-------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------
+
+[keyboard]
+[[keyboard.bindings]]
+key = "F11"
+action = "Togglemaximized"
+
+
+
+
+## Number of lines/columns (not pixels) in the terminal.
+[window.dimensions]
+columns = 110
+lines = 26
+
+## Blank space added around the window in pixels.
+[window.padding]
+x = 12
+y = 12
+
+## SCROLLING ------------------------------------------------------
+[scrolling]
+history = 10000
+multiplier = 3
+
+## SELECTION ------------------------------------------------------
+[selection]
+save_to_clipboard = true
+
+## CURSOR ---------------------------------------------------------
+[cursor]
+vi_mode_style = "beam"
+blink_interval = 750
+blink_timeout = 5
+unfocused_hollow = false
+thickness = 0.15
+
+
+[cursor.style]
+shape = "beam"
+blinking = "On"
+
+## MOUSE ----------------------------------------------------------
+[mouse]
+hide_when_typing = true
+
+## HINTS ----------------------------------------------------------
+[[hints.enabled]]
+command         = "xdg-open"
+hyperlinks      = true
+post_processing = true
+persist         = false
+mouse.enabled   = true
+binding         = { key = "U", mods = "Control|Shift" }
+regex           = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩‘]+"
+
+## DEBUG ----------------------------------------------------------
+[debug]
+render_timer = false
+persistent_logging = false
+log_level = "Warn"
+renderer = "None"
+print_events = false
+highlight_damage = false
+prefer_egl = false
+
+
+[general]
+
+## You can set shell.program to the path of your favorite shell, e.g. /bin/zsh.
+## Entries in shell.args are passed as arguments to the shell.
+#shell = { program = "/bin/zsh", args = ["--login"] }
+
+## Directory the shell is started in. When this is unset, or "None",
+## the working directory of the parent process will be used.
+#working_directory = "None"
+
+## Live config reload
+live_config_reload = true
+
+## Offer IPC using alacritty msg
+ipc_socket = true
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+##
+## Configuration for Alacritty, the GPU enhanced terminal emulator.
+## It's a very basic and simple config file, for full configuration, Run `man 5 alacritty`
+
+## GENERAL --------------------------------------------------------
+
+## Import additional configuration files.
+import = ["~/.config/alacritty/colors.toml", "~/.config/alacritty/fonts.toml"]
+
+
+
